@@ -5,7 +5,7 @@ import '../YellowPages.css';
 function HeaderWithLogo() {
     return (
         <div className="headerLogo">
-            <img src={logo} />
+            <img src={logo} alt="Yellow Pages Logo" />
         </div>
     )
 }
