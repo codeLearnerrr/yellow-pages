@@ -8,16 +8,17 @@ const styles = {
         backgroundColor: 'transparent',
         paddingLeft: '3.5rem',
         padding: '10px 5px',
+        borderStyle: 'solid',
+        borderWidth: '.5px',
+        borderColor: 'grey',
+        borderRadius: '25px',
     },
     search: {
         position: 'relative',
-        borderStyle: 'solid',
-        borderColor: 'green',
-        borderRadius:'5px',
-
+        width: '35%',
     },
     searchIcon: {
-        padding:'0rem 1rem',
+        padding: '0rem 1rem',
         height: '100%',
         position: 'absolute',
         display: 'flex',
@@ -27,14 +28,25 @@ const styles = {
 };
 
 class SearchBar extends Component {
+    AddsBoxShadowOnMouseOver = (OverEvent) => {
+        OverEvent.target.style.boxShadow = "1px 1px 5px black";
+    }
+    RemovesBoxShadowOnMouseLeave = (OverEvent) => {
+        OverEvent.target.style.boxShadow = "none";
+    }
     render() {
         const { classes } = this.props;
         return (
-            <div className={classes.search} >
+            <div className={classes.search}>
                 <div className={classes.searchIcon}>
                     <SearchIcon />
                 </div>
-                <InputBase placeholder="Search..." classes={{ input: classes.inputStyle }} />
+                <InputBase
+                    placeholder="Search..."
+                    onMouseOver={this.AddsBoxShadowOnMouseOver}
+                    onMouseLeave={this.RemovesBoxShadowOnMouseLeave}
+                    fullWidth={true}
+                    classes={{ input: classes.inputStyle }} />
             </div>
         )
     }
