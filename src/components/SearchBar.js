@@ -24,12 +24,14 @@ const styles = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        pointerEvents: 'none',
     },
 };
 
 class SearchBar extends Component {
     AddsBoxShadowOnMouseOver = (OverEvent) => {
-        OverEvent.target.style.boxShadow = "1px 1px 5px black";
+        OverEvent.target.style.boxShadow = "0px 0px 5px grey";
+        console.log(OverEvent);
     }
     RemovesBoxShadowOnMouseLeave = (OverEvent) => {
         OverEvent.target.style.boxShadow = "none";
@@ -39,7 +41,7 @@ class SearchBar extends Component {
         return (
             <div className={classes.search}>
                 <div className={classes.searchIcon}>
-                    <SearchIcon />
+                    <SearchIcon style={{ height:'60%'}} />
                 </div>
                 <InputBase
                     placeholder="Search..."
@@ -48,7 +50,7 @@ class SearchBar extends Component {
                     fullWidth={true}
                     classes={{ input: classes.inputStyle }} />
             </div>
-        )
+        )  
     }
 };
 
