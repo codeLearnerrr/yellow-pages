@@ -3,8 +3,15 @@ import '../YellowPages.css';
 export default class ContactListOneContact extends Component {
     render() {
         return (
-            <div>
-                <p className="alignTextCenter">Here's a single contact inside list</p>
+            <div >
+                <p>
+                    FNAME:{this.props.fname}
+                CONTACT:{this.props.contact}<br />
+                LNAME:{this.props.lname}<br />
+                ID:{this.props.id}<br />
+                </p>
+                <hr />
+
             </div>
         )
     }

@@ -4,7 +4,13 @@
   align-items: center;
 }
 .headerLogo img {
-    height: 250px;
-    
+  height: 250px;
 }
-.alignTextCenter{text-align: center;}
+.alignTextCenter {
+  text-align: center;
+}
+
+.drawLine {
+  width: 50%;
+  /* background-color: black; */
+}
