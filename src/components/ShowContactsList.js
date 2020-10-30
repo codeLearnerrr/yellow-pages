@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import ContactListOneContact from './ContactListOneContact'
 import '../YellowPages.css';
 
@@ -40,7 +40,7 @@ export class ShowContactsList extends Component {
             />
         ))
         return (
-            <div style={{backgroundColor: 'yellow', width:'50%'}}>
+            <div style={{ backgroundColor: 'yellow', width: '80%' }}>
                 {mockContacts}
             </div>
         )

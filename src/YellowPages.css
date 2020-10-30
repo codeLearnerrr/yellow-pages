@@ -10,7 +10,13 @@
   text-align: center;
 }
 
-.drawLine {
-  width: 50%;
-  /* background-color: black; */
+#lineFromNameToNumber {
+  flex: 1 1;
+  border-bottom: 1px solid #000;
+  margin: auto;
+}
+
+#lineFromNameToNumber {
+  margin-right: 10px;
+  margin-left: 10px;
 }
