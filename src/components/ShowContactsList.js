@@ -27,9 +27,35 @@ const mockData = [
         lname: 'Guzman',
         contact: '(12) 9 9750-0730',
     },
+    {
+        id: 5,
+        fname: 'Bruna',
+        lname: 'Guzman',
+        contact: '(12) 9 9750-0730',
+    },
+    {
+        id: 6,
+        fname: 'Bernard',
+        lname: 'Henry',
+        contact: '(12) 9 9750-0730',
+    },
+    {
+        id: 7,
+        fname: 'Baptiste',
+        lname: 'Arnoud',
+        contact: '(12) 9 9750-0730',
+    },
+    {
+        id: 8,
+        fname: 'Brian',
+        lname: 'Exoupheri',
+        contact: '(12) 9 9750-0730',
+    },
 ];
 export class ShowContactsList extends Component {
+    
     render() {
+
         const mockContacts = mockData.map((contactInfo) => (
             <ContactListOneContact
                 key={contactInfo.id}
