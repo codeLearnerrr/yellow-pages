@@ -1,73 +1,85 @@
 import React, { Component } from 'react'
-import ContactListOneContact from './ContactListOneContact'
+import ContactListOneContact from './ContactListOneContact';
 import '../YellowPages.css';
 
-const mockData = [
-    {
-        id: 1,
-        fname: 'Amanda',
-        lname: 'Gutierrez',
-        contact: '(31) 9 9550-0230',
-    },
-    {
-        id: 2,
-        fname: 'Amanda',
-        lname: 'Martins',
-        contact: '(31) 9 4550-0280',
-    },
-    {
-        id: 3,
-        fname: 'Amanda',
-        lname: 'Petri',
-        contact: '(11) 9 9550-0230',
-    },
-    {
-        id: 4,
-        fname: 'Amanda',
-        lname: 'Guzman',
-        contact: '(12) 9 9750-0730',
-    },
-    {
-        id: 5,
-        fname: 'Bruna',
-        lname: 'Guzman',
-        contact: '(12) 9 9750-0730',
-    },
-    {
-        id: 6,
-        fname: 'Bernard',
-        lname: 'Henry',
-        contact: '(12) 9 9750-0730',
-    },
-    {
-        id: 7,
-        fname: 'Baptiste',
-        lname: 'Arnoud',
-        contact: '(12) 9 9750-0730',
-    },
-    {
-        id: 8,
-        fname: 'Brian',
-        lname: 'Exoupheri',
-        contact: '(12) 9 9750-0730',
-    },
-];
+const mockData = {
+    "categories": [
+        {
+            "categoryName": "A",
+            "people": [
+                {
+                    "id": 1,
+                    "fname": "Amanda",
+                    "lname": "Gonzales",
+                    "contact": "(31) 9 9580-2530",
+                },
+                {
+                    "id": 2,
+                    "fname": "Astrid",
+                    "lname": "Guzman",
+                    "contact": "(31) 9 9790-2530",
+                },
+                {
+                    "id": 3,
+                    "fname": "Aurora",
+                    "lname": "Muñoz",
+                    "contact": "(57) 9 9580-2530",
+                },
+            ],
+        },
+        {
+            "categoryName": "B",
+            "people": [
+                {
+                    "id": 4,
+                    "fname": "Bernard",
+                    "lname": "Rieu",
+                    "contact": "(11) 9 4598-2530",
+                },
+                {
+                    "id": 5,
+                    "fname": "Bruna",
+                    "lname": "Argerich",
+                    "contact": "(21) 9 9790-7654",
+                },
+                {
+                    "id": 6,
+                    "fname": "Beatrice",
+                    "lname": "Guth",
+                    "contact": "(37) 9 7946-2530",
+                },
+            ]
+        },
+
+    ]
+};
+
+
 export class ShowContactsList extends Component {
-    
+
     render() {
 
-        const mockContacts = mockData.map((contactInfo) => (
-            <ContactListOneContact
-                key={contactInfo.id}
-                id={contactInfo.id}
-                fname={contactInfo.fname}
-                lname={contactInfo.lname}
-                contact={contactInfo.contact}
-            />
-        ))
+        const mockContacts = mockData.categories.map(function filterAndMap(contactInfo) {
+            function header(contactInfo) {
+                const result = contactInfo.people.map((inputPeople) => (
+                    <ContactListOneContact
+                        key={inputPeople.id}
+                        id={inputPeople.id}
+                        fname={inputPeople.fname}
+                        lname={inputPeople.lname}
+                        contact={inputPeople.contact}
+                    />))
+
+                return (result);
+            
+            }
+            return (header);
+        })
         return (
             <div style={{ backgroundColor: 'yellow', width: '80%' }}>
+                {/* <h1>A</h1> */}
                 {mockContacts}
+                {/* {this.printArrayOfAs()} */}
             </div>
         )
     }
