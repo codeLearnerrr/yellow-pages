@@ -8,7 +8,7 @@ class yellowPagesDashboard extends Component {
     render() {
         return (
             <div className="App">
-                <HeaderWithLogo/>
+                <HeaderWithLogo />
                 <SearchBar />
                 <ShowContactsList/>
             </div>
