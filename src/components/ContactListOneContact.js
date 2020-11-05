@@ -8,7 +8,7 @@ export default class ContactListOneContact extends Component {
                     {" , "}
                     {this.props.fname}
                     <span id="lineFromNameToNumber"></span>
-                    {this.props.contact}
+                <a href={`tel:${this.props.contact}`}>{this.props.contact}</a>
                 </p>
         )
     }

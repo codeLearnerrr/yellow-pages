@@ -59,7 +59,7 @@ class ShowContactsList extends Component {
         }, {})
         return Object.entries(groupedByLetter).map(([letter, contacts], index) => {
             return (
-                <div key={index} style={{ backgroundColor: 'yellow', width: '80%' }}>
+                <div key={index} style={{ backgroundColor: 'yellow', width: '80%', padding: '15px' }}>
                     <h1>{letter}</h1>
                     {contacts.map((inputMap, index) => (
                         <ContactListOneContact
