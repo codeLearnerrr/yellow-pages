@@ -3,13 +3,13 @@ import '../YellowPages.css';
 export default class ContactListOneContact extends Component {
     render() {
         return (
-                <p key={this.props.index} style={{ display: 'flex' }} >
-                    {this.props.lname}
-                    {" , "}
-                    {this.props.fname}
-                    <span id="lineFromNameToNumber"></span>
+            <p key={this.props.index} style={{ display: 'flex' }} >
+                {this.props.lname}
+                {" , "}
+                {this.props.fname}
+                <span id="lineFromNameToNumber"></span>
                 <a href={`tel:${this.props.contact}`}>{this.props.contact}</a>
-                </p>
+            </p>
         )
     }
 }
