@@ -46,16 +46,37 @@ import '../YellowPages.css';
 //         "contact": "(37) 9 7946-2530",
 //     },
 // ];
-const mockData = [{}];
-fetch('http://localhost:5000/getAllPeopleJSON')
-    .then(res => res.json())
-    .then(body => mockData = body);
-    
+// const mockData = fetch('http://localhost:5000/getAllPeopleJSON')
+//     .then(res => res.json())
+//     .then(body => console.log(body));
+
 
 
 class ShowContactsList extends Component {
-    
+    constructor(props) {
+        super(props);
+        this.state = {
+            mockData: [{
+                person_id: 1,
+                fname: 'Amanda',
+                lname: 'Gonzales',
+                contact: '31995802530',
+                category: 'Business'
+            }],
+        };
+    };
+    componentDidMount() {
+        fetch('https://localhost:5000/getAllPeopleJSON')
+            .then(res => res.json())
+            .then((body) => {
+                this.setState({
+                    mockData: body,
+                });
+            }
+            );
+    };
     render() {
+        const { mockData } = this.state;
         const groupedByLetter = mockData.reduce((groups, contact) => {
             const letter = contact.fname[0].toUpperCase();
             const group = groups[letter] || [];
