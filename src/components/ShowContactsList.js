@@ -2,78 +2,22 @@ import React, { Component } from 'react'
 import ContactListOneContact from './ContactListOneContact';
 import '../YellowPages.css';
 
-// const mockData = [
-//     {
-//         "id": 1,
-//         "fname": "Amanda",
-//         "lname": "Gonzales",
-//         "contact": "(31) 9 9580-2530",
-//     },
-//     {
-//         "id": 2,
-//         "fname": "Astrid",
-//         "lname": "Guzman",
-//         "contact": "(31) 9 9790-2530",
-//     },
-//     {
-//         "id": 3,
-//         "fname": "Aurora",
-//         "lname": "Muñoz",
-//         "contact": "(57) 9 9580-2530",
-//     },
-//     {
-//         "id": 4,
-//         "fname": "Bernard",
-//         "lname": "Rieu",
-//         "contact": "(11) 9 4598-2530",
-//     },
-//     {
-//         "id": 5,
-//         "fname": "Bruna",
-//         "lname": "Argerich",
-//         "contact": "(21) 9 9790-7654",
-//     },
-//     {
-//         "id": 6,
-//         "fname": "Zion",
-//         "lname": "Guth",
-//         "contact": "(37) 9 7946-2530",
-//     },
-//     {
-//         "id": 7,
-//         "fname": "Beatrice",
-//         "lname": "Guth",
-//         "contact": "(37) 9 7946-2530",
-//     },
-// ];
-// const mockData = fetch('http://localhost:5000/getAllPeopleJSON')
-//     .then(res => res.json())
-//     .then(body => console.log(body));
-
-
-
 class ShowContactsList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            mockData: [{
-                person_id: 1,
-                fname: 'Amanda',
-                lname: 'Gonzales',
-                contact: '31995802530',
-                category: 'Business'
-            }],
+            mockData: [],
         };
     };
     componentDidMount() {
-        fetch('https://localhost:5000/getAllPeopleJSON')
+        fetch('http://localhost:5000/getAllPeopleJSON')
             .then(res => res.json())
             .then((body) => {
                 this.setState({
                     mockData: body,
                 });
-            }
-            );
+            });
+        
     };
     render() {
         const { mockData } = this.state;
